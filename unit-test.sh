@@ -1,7 +1,4 @@
 #!/bin/bash
-echo "Running Unit Tests..."
-sleep 2
-echo "Unit Tests Passed"
-
-# For real tests:
-# pytest --junitxml=unit-test-report.xml
+set -e
+# run unit tests and write junit xml
+pytest tests/unit --junitxml=tests/unit/unit-results.xml
