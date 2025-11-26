@@ -7,7 +7,9 @@ node {
 
     stage('Build') {
         echo 'Building the application...'
-        sh 'mvn clean package -DskipTests'
+        dir('app') {
+            sh 'mvn clean package -DskipTests'
+        }
     }
 
     stage('Parallel Tests') {
